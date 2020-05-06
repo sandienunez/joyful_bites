@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby #shebang line #this is also an executable 
+
+require_relative '../lib/environment' #requires everything i need in my 
+
+Cli.new.run #instantianting cli class and calling run method on new instance
+
