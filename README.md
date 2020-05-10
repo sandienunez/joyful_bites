@@ -4,7 +4,7 @@ Welcome to the Joyful Bites app! This tool is an incredible interface that allow
 
 
 ## Installation
-Eventually, foodexplorer will be a fully-fledged Ruby gem. At the moment, installation of the project can be performed locally with the following steps:
+Eventually, Joyful Bites will be a fully-fledged Ruby gem. At the moment, installation of the project can be performed locally with the following steps:
 
     1. Navigate to the repo on GitHub at https://github.com/sandienunez/joyful_bites
     2. Click the green Clone or Download button and copy the remote URL
