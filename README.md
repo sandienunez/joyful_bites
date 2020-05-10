@@ -14,7 +14,7 @@ Eventually, Joyful Bites will be a fully-fledged Ruby gem. At the moment, instal
 
 ## Usage
 
-To run Joyful Bites from your command line, just enter cd joyful_bites && ruby ./bin/run into your shell!
+To run Joyful Bites from your command line, just enter `cd joyful_bites` & `ruby ./bin/run` in your shell!
 
 From there, you can explore the meals of your dreams, full of your favorite ingredient items! Complete with meals, recipes, and more.
 
