@@ -4,7 +4,8 @@ require 'json'
 #require 'dotenv-rails'
 require 'dotenv'
 Dotenv.load
-## ^^ outside dependencies = don't know eactly where they live in my system 
+require 'colorize'
+## ^^ outside dependencies = don't know exactly where they live in my system 
 
 
 require_relative './meals/cli'

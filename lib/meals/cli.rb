@@ -61,6 +61,9 @@ class Cli
 
     def prompt_recipe
         puts "  "
+        print "\n                                   T   H   I   N   K   I   N   G \n".blue + "[-----------------------------------------------------------------------------------------------------]".green
+        puts "  "
+        puts "  "
         puts "Type a number to see the recipe, type 'list' to see the list again, 'ingredient' to choose a new ingredient' or 'exit' to exit the app. "
     end
 
@@ -74,7 +77,7 @@ class Cli
     end
 
     def space 
-        puts "-----------------------------------------------------------------------------------------------------------------------------------------------"
+        puts "-------------------------------------------------------------------------------------------------------------------------------"
         puts "  "
     end
 
@@ -92,14 +95,13 @@ class Cli
         puts "Instructions: #{meal.instructions}"
     end
 
-    def list_meal_recipes(meals)
-            case meals
-            when 1..10
-                recipe
-            else 
-            "What did you say? Try typing that again please."
-        end      
-    end
+    #   def list_meal_recipes(meals)
+    #         case meals
+    #         when 1..10
+    #             recipe
+    #         else 
+    #         "What did you say? Try typing that again please."
+    #     end      
 
     # def list_meal_ingredients 
 

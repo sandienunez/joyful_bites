@@ -16,13 +16,14 @@ class Api
         response = Net::HTTP.get(URI(url)) #namespace class
         recipe = JSON.parse(response)
         new_meal = Meal.find_or_create_by_name(meal_details["title"]) 
-        ##binding.pry
+        #binding.pry
 
-
-      
-        end
-       
-    end 
+        # def new_choice
+        #     Api.meals.each do |meal|
+        #           Api.delete(meals)
+        #         end
+        #       end
+       end 
 end
 
 
