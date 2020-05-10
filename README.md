@@ -1,34 +1,28 @@
-# JoyfulBites
+# Welcome to JoyfulBites!
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/joyful_bites`. To experiment with that code, run `bin/console` for an interactive prompt.
+Welcome to the Joyful Bites app! This tool is an incredible interface that allows the user the ability to type in the ingredients they have in their kitchen and receive back meal ideas. We cater to serve your dietary needs during this pandemic based on what's in your fridge! We take away the stress of meal prep ideas so you can fully enjoy your day! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/joyful_bites`. To experiment with that code, run `ruby ./bin/run` for an interactive prompt. 
 
-TODO: Delete this and the text above, and describe your gem
 
 ## Installation
+Eventually, foodexplorer will be a fully-fledged Ruby gem. At the moment, installation of the project can be performed locally with the following steps:
 
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'joyful_bites'
-```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install joyful_bites
+    1. Navigate to the repo on GitHub at https://github.com/sandienunez/joyful_bites
+    2. Click the green Clone or Download button and copy the remote URL
+    3. Type git clone then paste the copied URL into your terminal
+    4.Change directory using cd foodexplorer in the terminal to open the Joyful Bites directory
+    5. Install dependencies with bundle install.
 
 ## Usage
 
-TODO: Write usage instructions here
+To run Joyful Bites from your command line, just enter cd joyful_bites && ruby ./bin/run into your shell!
+
+From there, you can explore the meals of your dreams, full of your favorite ingredient items! Complete with meals, recipes, and more.
 
 ## Development
 
-After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+After checking out the repo, run `bin/environment` to install dependencies. You can also run `ruby ./bin/run` for an interactive prompt that will allow you to experiment.
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
 
 ## Contributing
 
