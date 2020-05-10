@@ -1,15 +1,15 @@
-# Welcome to JoyfulBites!
+# JoyfulBites
 
-Welcome to the Joyful Bites app! This tool is an incredible interface that allows the user the ability to type in the ingredients they have in their kitchen and receive back meal ideas. We cater to serve your dietary needs during this pandemic based on what's in your fridge! We take away the stress of meal prep ideas so you can fully enjoy your day! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/joyful_bites`. To experiment with that code, run `ruby ./bin/run` for an interactive prompt. 
+Welcome to the Joyful Bites app! This tool is an incredible interface that caters to serve the user's dietary needs during this pandemic based on what's in your fridge! We take away the stress of meal prep ideas so you can fully enjoy your day! The user simple types in the ingredient(s) they have in their kitchen and receive back meal ideas and recipes galore. In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/joyful_bites`. To experiment with that code, run `ruby ./bin/run` for an interactive prompt. 
 
 
 ## Installation
 Eventually, Joyful Bites will be a fully-fledged Ruby gem. At the moment, installation of the project can be performed locally with the following steps:
 
     1. Navigate to the repo on GitHub at https://github.com/sandienunez/joyful_bites
-    2. Click the green Clone or Download button and copy the remote URL
-    3. Type git clone then paste the copied URL into your terminal
-    4.Change directory using cd foodexplorer in the terminal to open the Joyful Bites directory
+    2. Click the green Clone or Download button and copy the remote URL.
+    3. Type git clone then paste the copied URL into your terminal.
+    4. Change directory using cd foodexplorer in the terminal to open the Joyful Bites directory.
     5. Install dependencies with bundle install.
 
 ## Usage
