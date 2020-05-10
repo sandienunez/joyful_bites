@@ -1,6 +1,6 @@
 # JoyfulBites
 
-Welcome to the Joyful Bites app! This tool is an incredible interface that caters to serve the user's dietary needs during this pandemic based on what's in your fridge! We take away the stress of meal prep ideas so you can fully enjoy your day! Whether you're GF(gluten-free), Vegan or just plain old hungry, we have something to please everyone! The user simple types in the ingredient(s) they have in their kitchen and receive back meal ideas and recipes galore. In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/joyful_bites`. To experiment with that code, run `ruby ./bin/run` for an interactive prompt. 
+Welcome to the Joyful Bites app! This tool is an incredible interface that caters to serve the user's dietary needs during this pandemic based on what's in your fridge! We take away the stress of meal prep ideas so you can fully enjoy your day! Whether you're GF (gluten-free), Vegan or just plain old hungry, we have something to please everyone! The user simply types in the ingredient(s) they have in their kitchen and receive back a list of meal ideas and can further explore recipes galore. In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/joyful_bites`. To experiment with that code, run `ruby ./bin/run` for an interactive prompt. 
 
 
 ## Installation
