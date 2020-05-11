@@ -18,8 +18,8 @@ class Api
         new_meal.recipe=(recipe.first["steps"].first["step"])
         ###binding.pry
         ingredient_hash = recipe.first["steps"].first["ingredients"]
-        ingredient_hash.collect do |ingredients|
-            ingredients
+        # ingredient_hash.collect do |ingredients|
+        #     ingredients
         end
         #new_meal.new_ingredient=(new_ingredient.first["id"].first["name"])
         # new_meal.each do ||
