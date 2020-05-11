@@ -5,7 +5,7 @@ class Cli
         puts "  " #add some white spacing/format for user = aesthetically makes it prettier for user
         puts "Welcome to the Joyful Bites app! Where we cater to serve your dietary needs during this pandemic based on what's in your fridge! Let us take away the stress of meal prep ideas so you can fully enjoy your day!"
         puts "  "
-        puts "Simply choose one ingredient you have in your kitchen and press enter."
+        puts "Simply choose one or more ingredients you have in your kitchen and press enter."
         puts "  "
     
         @ingredient = gets.strip.downcase #or should i do chomp method
@@ -17,13 +17,16 @@ class Cli
         input = gets.strip.downcase 
 
         while input != 'exit'
+           # binding.pry
             if input == 'list'
                 print_meals(Meal.all)
                 # go ahead and list my meals with this ingredient again
             elsif input.to_i > 0 && input.to_i <= Ingredient.find_by_ingredient(@ingredient).meals.length
+                #binding.pry
                 meal = Ingredient.find_by_ingredient(@ingredient).meals[input.to_i-1]
-                Api.get_meal_details(meal) if !meal.recipe
+                # Api.get_meal_details(meal) if !meal.recipe
                 print_meal(meal)
+            
             elsif input == "ingredient"
                 prompt_ingredient
             else 
@@ -43,7 +46,7 @@ class Cli
     end
 
     def print_meals(meals)
-        space 
+        spacer
         puts "  "
         puts "Are you ready? Behold these fantastic meal ideas below created with your fantastic #{@ingredient}!"
         puts "  "
@@ -67,6 +70,10 @@ class Cli
         puts "Type a number to see the recipe, type 'list' to see the list again, 'ingredient' to choose a new ingredient' or 'exit' to exit the app. "
     end
 
+    def get_meals 
+    @ingredient
+    end
+
     def prompt_ingredient
         puts "  "
         puts "Type an ingredient to see the delicious meals you can make with it!"
@@ -76,24 +83,43 @@ class Cli
         print_meals(Meal.all)
     end
 
-    def space 
+    def spacer
         puts "-------------------------------------------------------------------------------------------------------------------------------"
         puts "  "
     end
 
     def print_meal(meal)
         spacer
-        puts "#{meal.name} Recipe"
+        #binding.pry
+        puts "#{meal.meal_name} Recipe"
         spacer
-        puts "#{meal.bowl}"
-        spacer
-        puts "Ingredients: "
-        meal.ingredients.each_with_index do |ingredient, index|
-            puts "#{ingredient}: #{meal.serving[index]}"
-        end
-        spacer 
-        puts "Instructions: #{meal.instructions}"
+        puts meal.recipe
+        # puts "Ingredients: "
+        # # meal_name.ingredients.each_with_index do |ingredient, index|
+        # #     puts "#{ingredient}: #{meal_name.serving[index]}"
+        # # end
+        # # spacer 
+        # # puts "Instructions: #{meal.instructions}"
     end
+
+    # input = gets.strip
+    #     list_recipes
+    #     when "1"
+    #    Meal.all[input.to_i - 1]
+    # when "2"
+    #  Meal.all[input.to_i - 1]
+    #     end
+    # end
+
+    def list_recipes
+        meals_sorted_by_meal_name = Meal.all.sort_by do |meal|
+            meal.name
+        end
+        meals _sorted_by_name.each.with_index(1) do |meal,index|
+            puts "#{index}. #{meal.ingredient.meal_name} - #{meal.meal_name}"
+        end
+    end
+
 
     #   def list_meal_recipes(meals)
     #         case meals

@@ -7,25 +7,38 @@ class Api
     meals = JSON.parse(response)
     new_ingredient = Ingredient.new(ingredient)
    #binding.pry
-
-
     
     meals.each_with_index do |meal_details, index|
         url = "https://api.spoonacular.com/recipes/#{meal_details["id"]}/analyzedInstructions?apiKey=#{ENV.fetch('SPOONACULAR_API_KEY')}" 
         #binding.pry
         response = Net::HTTP.get(URI(url)) #namespace class
         recipe = JSON.parse(response)
-        new_meal = Meal.find_or_create_by_name(meal_details["title"]) 
+        # binding.pry
+        new_meal = Meal.find_or_create_by_name(meal_details["title"])
+        new_meal.recipe=(recipe.first["steps"].first["step"])
+        ###binding.pry
+        ingredient_hash = recipe.first["steps"].first["ingredients"]
+        ingredient_hash.collect do |ingredients|
+            ingredients
+        end
+        #new_meal.new_ingredient=(new_ingredient.first["id"].first["name"])
+        # new_meal.each do ||
+        new_ingredient.meals << new_meal 
+
+        # ingredient_array.collect 
+
         #binding.pry
 
-        # def new_choice
+
+        end 
+
+    end 
+end
+   # def new_choice
         #     Api.meals.each do |meal|
         #           Api.delete(meals)
         #         end
         #       end
-       end 
-end
-
 
 #new_meal = Meal.new(meal_details["title"]) get rid of 
 # key = ENV.fetch('SPOONACULAR_API_KEY')

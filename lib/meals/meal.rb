@@ -1,11 +1,11 @@
 class Meal 
-    attr_accessor :meal_name, :ingredient, :recipe 
+    attr_accessor :meal_name, :ingredients, :recipe 
 
     @@all = []
 
-    def initialize(meal_name, ingredient = nil, recipe = nil) #nil =to make it optional cuz we don't wanna pass in last 2 
+    def initialize(meal_name, recipe=0) #nil =to make it optional cuz we don't wanna pass in last 2 
         @meal_name = meal_name 
-        @ingredient = ingredient 
+        @ingredients = ingredients 
         @recipe = recipe 
 
         @@all << self 
@@ -19,10 +19,10 @@ class Meal
         self.all.select {|meal| meal.ingredient == ingredient}
     end
 
-     def self.find_or_create_by_name(ingredient)
-            self.all.find do |meal| 
-        end
-    end
+    #  def self.find_or_create_by_name(ingredient)
+    #         self.all.find do |meal| 
+    #     end
+    # end
 
     def self.find_by_name(name)
         self.all.find do |meal| 

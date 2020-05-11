@@ -1,5 +1,5 @@
 class Ingredient
-    attr_accessor :name, :meals 
+    attr_accessor :name, :meals
 
     @@all = []
 
