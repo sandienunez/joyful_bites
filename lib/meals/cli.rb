@@ -11,20 +11,20 @@ class Cli
         @ingredient = gets.strip.downcase #or should i do chomp method
         Api.get_meals(@ingredient)  ## send query to API 
         ## display a list of meals to user 
-        print_meals(Meal.all)
+        print_meals(Meal.all)  #how can i just pass in meals for this current ingredient
         ## present user w/ next steps
         prompt_recipe
         input = gets.strip.downcase 
 
         while input != 'exit'
-           # binding.pry
+           #binding.pry
             if input == 'list'
-                print_meals(Meal.all)
+                print_meals(Ingredient.find_by_ingredient(@ingredient).meals) 
                 # go ahead and list my meals with this ingredient again
             elsif input.to_i > 0 && input.to_i <= Ingredient.find_by_ingredient(@ingredient).meals.length
                 #binding.pry
                 meal = Ingredient.find_by_ingredient(@ingredient).meals[input.to_i-1]
-                # Api.get_meal_details(meal) if !meal.recipe
+                Api.get_meal_details(meal) if !meal.recipe
                 print_meal(meal)
             
             elsif input == "ingredient"

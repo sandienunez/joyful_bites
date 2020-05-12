@@ -1,12 +1,12 @@
 class Meal 
-    attr_accessor :meal_name, :ingredients, :recipe 
+    attr_accessor :meal_name, :ingredients, :recipe, :url
 
     @@all = []
 
-    def initialize(meal_name, recipe=0) #nil =to make it optional cuz we don't wanna pass in last 2 
+    def initialize(meal_name, ingredients=nil, recipe=nil) #nil =to make it optional cuz we don't wanna pass in last 2 
         @meal_name = meal_name 
-        @ingredients = ingredients 
-        @recipe = recipe 
+        # @ingredients = ingredients 
+        # @recipe = recipe 
 
         @@all << self 
     end

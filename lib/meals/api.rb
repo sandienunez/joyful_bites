@@ -1,39 +1,47 @@
 class Api
-   def self.get_meals(ingredient)
-    key = ENV.fetch('SPOONACULAR_API_KEY')
-    url = "https://api.spoonacular.com/recipes/findByIngredients?ingredients=#{ingredient}&apiKey=#{ENV.fetch('SPOONACULAR_API_KEY')}"
-    response = Net::HTTP.get(URI(url)) #namespace class
-   
-    meals = JSON.parse(response)
-    new_ingredient = Ingredient.new(ingredient)
-   #binding.pry
-    
-    meals.each_with_index do |meal_details, index|
-        url = "https://api.spoonacular.com/recipes/#{meal_details["id"]}/analyzedInstructions?apiKey=#{ENV.fetch('SPOONACULAR_API_KEY')}" 
-        #binding.pry
+    def self.get_meals(ingredient)
+        key = ENV.fetch('SPOONACULAR_API_KEY')
+        url = "https://api.spoonacular.com/recipes/findByIngredients?ingredients=#{ingredient}&apiKey=#{ENV.fetch('SPOONACULAR_API_KEY')}"
         response = Net::HTTP.get(URI(url)) #namespace class
-        recipe = JSON.parse(response)
+   
+        meals = JSON.parse(response)
         # binding.pry
-        new_meal = Meal.find_or_create_by_name(meal_details["title"])
-        new_meal.recipe=(recipe.first["steps"].first["step"])
-        ###binding.pry
-        ingredient_hash = recipe.first["steps"].first["ingredients"]
+        new_ingredient = Ingredient.new(ingredient)
+
+    
+    
+        meals.each_with_index do |meal_details, index|
+            new_meal = Meal.find_or_create_by_name(meal_details["title"])
+             url = "https://api.spoonacular.com/recipes/#{meal_details["id"]}/analyzedInstructions?apiKey=#{ENV.fetch('SPOONACULAR_API_KEY')}" 
+             new_meal.url=url 
+            new_ingredient.meals << new_meal 
+        end
+    end 
+        # binding.pry
+        def self.get_meal_details(meal_object)
+            response = Net::HTTP.get(URI(meal_object.url)) #namespace class
+            recipe = JSON.parse(response)
+            ingredient_hash = recipe.first["steps"].first["ingredients"]
+        #  binding.pry
+        end 
+end 
+        # new_meal.recipe=(recipe.first["steps"].first["step"])
+
+           
+        #binding.pry
+    
+
+    # def get_ingredient(ingredient)
+    
         # ingredient_hash.collect do |ingredients|
         #     ingredients
-        end
         #new_meal.new_ingredient=(new_ingredient.first["id"].first["name"])
         # new_meal.each do ||
-        new_ingredient.meals << new_meal 
+     
 
         # ingredient_array.collect 
-
         #binding.pry
 
-
-        end 
-
-    end 
-end
    # def new_choice
         #     Api.meals.each do |meal|
         #           Api.delete(meals)
