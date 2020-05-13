@@ -9,7 +9,7 @@ Eventually, Joyful Bites will be a fully-fledged Ruby gem. At the moment, instal
     1. Navigate to the repo on GitHub at https://github.com/sandienunez/joyful_bites
     2. Click the green Clone or Download button and copy the remote URL.
     3. Type git clone then paste the copied URL into your terminal.
-    4. Change directory using cd foodexplorer in the terminal to open the Joyful Bites directory.
+    4. Change directory using cd joyful_bites in the terminal to open the Joyful Bites directory.
     5. Install dependencies with bundle install.
 
 ## Usage
