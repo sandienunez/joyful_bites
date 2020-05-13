@@ -22,7 +22,7 @@ class Cli
                 print_meals(Ingredient.find_by_ingredient(@ingredient).meals) 
                 # go ahead and list my meals with this ingredient again
             elsif input.to_i > 0 && input.to_i <= Ingredient.find_by_ingredient(@ingredient).meals.length
-                #binding.pry
+                # binding.pry
                 meal = Ingredient.find_by_ingredient(@ingredient).meals[input.to_i-1]
                 Api.get_meal_details(meal) if !meal.recipe
                 print_meal(meal)
@@ -57,6 +57,7 @@ class Cli
     end
 
     def print_meal(meal)
+        binding.pry 
         puts meal.meal_name
         #puts meal.instructions 
         puts 

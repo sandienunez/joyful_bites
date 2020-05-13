@@ -21,10 +21,20 @@ class Api
         def self.get_meal_details(meal_object)
             response = Net::HTTP.get(URI(meal_object.url)) #namespace class
             recipe = JSON.parse(response)
+            if recipe != []
+              #binding.pry
             ingredient_hash = recipe.first["steps"].first["ingredients"]
-        #  binding.pry
+            else 
+                puts "Sorry, this recipe is still under development by the chef. Please try another number!"
+            end
         end 
 end 
+
+       ###hash.each do |key, value|
+    ## puts '# {key} : # {value}"
+    ##end
+
+      
         # new_meal.recipe=(recipe.first["steps"].first["step"])
 
            
