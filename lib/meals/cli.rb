@@ -4,7 +4,11 @@ class Cli
         a = Artii::Base.new
         #binding.pry
         puts "  " #add some white spacing/format for user = aesthetically makes it prettier for user
-        puts ""
+        puts "  "
+        puts a.asciify('                               H E L L O !         ').green 
+        puts a.asciify('                              H O  L  A !').blue
+        puts a.asciify('                             B O N J O U R  !  ').magenta
+        puts a.asciify('                                 K o n  n i c h i w a !  ')
         puts "🍉🍊 Welcome to the Joyful Bites app! Where we make your life so much easier during this pandemic based on what's in your fridge! Let us take away the stress of meal prep ideas so you can fully enjoy your life!🍓🍏".magenta
         puts "  "
         puts "🍍 Simply choose one or more 🍆 vegetable 🍅 or 🍎 fruit 🍌 ingredients you have in your kitchen and press enter.".blue  
@@ -106,7 +110,7 @@ class Cli
         puts "  "
         puts "  "
         puts "  "
-        puts "Type a number to see the recipe, type 'list' to see the list again, 'ingredient' to choose a new ingredient' or 'exit' to exit the app.".red
+        puts "Type a number to see the recipe, type 'list' to see the list again, 'ingredient' to choose a new ingredient' or 'exit' to exit the app.".blue
         puts "  "
         puts "  "
     end
