@@ -5,6 +5,8 @@ require 'json'
 require 'dotenv'
 Dotenv.load
 require 'colorize'
+require 'artii'
+
 # require 'artii'
 ## ^^ outside dependencies = don't know exactly where they live in my system 
 
