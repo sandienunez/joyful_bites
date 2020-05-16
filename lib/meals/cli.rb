@@ -1,8 +1,10 @@
 class Cli
 
     def run #instance method 
+        a = Artii::Base.new
         #binding.pry
         puts "  " #add some white spacing/format for user = aesthetically makes it prettier for user
+        puts ""
         puts "🍉🍊 Welcome to the Joyful Bites app! Where we make your life so much easier during this pandemic based on what's in your fridge! Let us take away the stress of meal prep ideas so you can fully enjoy your life!🍓🍏".magenta
         puts "  "
         puts "🍍 Simply choose one or more 🍆 vegetable 🍅 or 🍎 fruit 🍌 ingredients you have in your kitchen and press enter.".blue  
@@ -38,9 +40,17 @@ class Cli
             input = gets.strip.downcase 
         end
   
+        puts "       "
+        puts "       "
+        puts "       "
+        puts a.asciify('     Thank     you     for     visiting      the').blue
         puts "  "
-        puts "Thank you for visiting the Joyful Bites app! Come back again soon."
+        puts a.asciify('                  Joyful      Bites      app  !').green
+        puts "  "
+        puts a.asciify('         Come     back     again     S O O N   !').magenta
+        puts "        "
     end
+    #  for visiting the Joyful Bites app! Come back again soon
 
     def menu_meals(meals)
         puts "  "
@@ -64,7 +74,6 @@ class Cli
         print "\n                                            T   H   I   N   K   I   N   G \n".blue + "[-----------------------------------------------------------------------------------------------------]".green
         puts "  "
         puts "Meal Idea:".red 
-        # puts "Meal Idea: #{meal.meal_name}" 
         puts meal.meal_name
         puts "  "
         puts "Ingredients needed for your recipe:".red
@@ -77,7 +86,6 @@ class Cli
         puts "Recipe Instructions:".red
         puts "  "
         puts meal.recipe 
-        # puts meal.recipe.each.with_index(1) do |recipe, index|
                
         # binding.pry   
     end
@@ -113,62 +121,10 @@ class Cli
     end
 end
 
-    # def print_meal(meal)
-    #     spacer
-    #     #binding.pry
-    #     puts "#{meal.meal_name} Recipe"
-    #     spacer
-    #     puts meal.recipe
-        # puts "Ingredients: "
-        # # meal_name.ingredients.each_with_index do |ingredient, index|
-        # #     puts "#{ingredient}: #{meal_name.serving[index]}"
-        # # end
-        # # spacer 
-        # # puts "Instructions: #{meal.instructions}"
     
 
-    # input = gets.strip
-    #     list_recipes
-    #     when "1"
-    #    Meal.all[input.to_i - 1]
-    # when "2"
-    #  Meal.all[input.to_i - 1]
-    #     end
-    # end
-
-    # def list_recipes
-    #     meals_sorted_by_meal_name = Meal.all.sort_by do |meal|
-    #         meal.name
-    #     end
-    #     meals _sorted_by_name.each.with_index(1) do |meal,index|
-    #         puts "#{index}. #{meal.ingredient.meal_name} - #{meal.meal_name}"
-    #     end
-    # end
-
-
-    #   def list_meal_recipes(meals)
-    #         case meals
-    #         when 1..10
-    #             recipe
-    #         else 
-    #         "What did you say? Try typing that again please."
-    #     end      
-
-    # def list_meal_ingredients 
-
-    # end
-
- 
-
-
-# def end_greeting
-    #     puts "Thank you for visiting the Joyful Bites app! Come back again soon."
-    # end
-
-##if y: Yay! Amazing! Simply choose one ingredient you have in your kitchen and press enter.
-##if n: Aw, we're sad to see you go. We'll see you next time. Have a Joyful day!!
-## what about if they type yes? or type ghfh ? how can i help the user get back?
-
+      # puts "Meal Idea: #{meal.meal_name}" 
+     # puts meal.recipe.each.with_index(1) do |recipe, index|
 
 #convention for this cli file = to have run method = job is to execute flow of what app does 
 ###Cli file = handles input FROM my user and output TO my user 
