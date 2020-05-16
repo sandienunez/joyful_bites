@@ -21,7 +21,8 @@ class Api
         def self.get_meal_details(meal_object)
             response = Net::HTTP.get(URI(meal_object.url)) #namespace class
             recipe = JSON.parse(response)
-         
+            # binding.pry
+            # binding.pry
             if recipe != []
               #binding.pry
             
@@ -30,6 +31,7 @@ class Api
                 hash["step"]
                 # binding.pry
             end 
+          
             ingredient_array = recipe.first["steps"].map do |recipe_hash|
                 
                 recipe_hash["ingredients"].map do |ingredient_hash|

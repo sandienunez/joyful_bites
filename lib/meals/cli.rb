@@ -57,8 +57,13 @@ class Cli
         puts meal_details["title"]
     end
 
+    def spacer
+        puts "-------------------------------------------------------------------------------------------------------------------------------"
+        puts "  "
+    end
+
     def print_meals(meals)
-        spacer
+        self.spacer
         puts "  "
         puts "Are you ready? Behold these fantastic meal ideas below created with your fantastic #{@ingredient}!"
         puts "  "
@@ -73,20 +78,26 @@ class Cli
         puts "  "
         print "\n                                            T   H   I   N   K   I   N   G \n".blue + "[-----------------------------------------------------------------------------------------------------]".green
         puts "  "
-        puts "Meal Idea:".red 
+        puts "Meal Idea:".magenta 
         puts meal.meal_name
         puts "  "
-        puts "Ingredients needed for your recipe:".red
-        meal.ingredients.each.with_index(1) do |ingredient, index|
-            # binding.pry 
-               
+        puts "Ingredients needed for your recipe:".magenta
+        # binding.pry 
+        if meal.ingredients != nil
+            meal.ingredients.each.with_index(1) do |ingredient, index|
+            # binding.pry  
                 puts "Step #{index}. #{ingredient}"
+            end 
         end 
         puts "  "
-        puts "Recipe Instructions:".red
+        puts "Recipe Instructions:".magenta
         puts "  "
-        puts meal.recipe 
-               
+        #  binding.pry
+        if meal.recipe != nil 
+        puts meal.recipe
+       
+        end
+             # puts meal.recipe.each.with_index(1) do |recipe, index|
         # binding.pry   
     end
 
@@ -95,7 +106,7 @@ class Cli
         puts "  "
         puts "  "
         puts "  "
-        puts "Type a number to see the recipe, type 'list' to see the list again, 'ingredient' to choose a new ingredient' or 'exit' to exit the app. "
+        puts "Type a number to see the recipe, type 'list' to see the list again, 'ingredient' to choose a new ingredient' or 'exit' to exit the app.".red
         puts "  "
         puts "  "
     end
@@ -115,10 +126,6 @@ class Cli
         print_meals(Ingredient.find_by_ingredient(@ingredient).meals)
     end
 
-    def spacer
-        puts "-------------------------------------------------------------------------------------------------------------------------------"
-        puts "  "
-    end
 end
 
     
