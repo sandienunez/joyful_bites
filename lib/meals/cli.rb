@@ -11,7 +11,7 @@ class Cli
         puts a.asciify('                                 K o n  n i c h i w a !  ')
         puts "🍉🍊 Welcome to the Joyful Bites app! Where we make your life so much easier during this pandemic based on what's in your fridge! Let us take away the stress of meal prep ideas so you can fully enjoy your life!🍓🍏".magenta
         puts "  "
-        puts "🍍 Simply choose one or more 🍆 vegetable 🍅 or 🍎 fruit 🍌 ingredients you have in your kitchen and press enter.".blue  
+        puts "🍍 Simply choose one or more 🍆 vegetable, 🍅 fruit, 🍎or poultry 🍌 ingredients you have in your kitchen, pantry or fridge and press enter. If you want dairy-free, gluten-free or vegan meal ideas, you can type 'Vegan GF' to receive back a curated list made just for you!".blue  
         puts "  "
     
         @ingredient = gets.strip.downcase #or should i do chomp method
@@ -101,7 +101,6 @@ class Cli
         puts meal.recipe
        
         end
-             # puts meal.recipe.each.with_index(1) do |recipe, index|
         # binding.pry   
     end
 

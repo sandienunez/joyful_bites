@@ -42,7 +42,7 @@ class Api
             end 
             ingredient_array.flatten!
         meal_object.ingredients=ingredient_array 
-            #  binding.pry
+            #   binding.pry
             recipe_string = steps.join
             meal_object.recipe=recipe_string
             else 
