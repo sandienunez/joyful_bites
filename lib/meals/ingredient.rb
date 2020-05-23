@@ -5,15 +5,15 @@ class Ingredient
 
     def initialize(name)
         @name = name 
-        @meals = [] ###will contain an array of Meal OBJECTS!
+        @meals = [] 
         @@all << self
     end
 
-    def self.all #class method bc of self in front of all 
+    def self.all 
         @@all 
     end
 
-    def self.find_by_ingredient(ingredient) #object relationship
+    def self.find_by_ingredient(ingredient)
         @@all.find {|i| i.name == ingredient}
 
     end

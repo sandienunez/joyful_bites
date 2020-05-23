@@ -1,26 +1,5 @@
 #!/usr/bin/env ruby 
-#shebang line = run this file as a ruby file run it as ruby , tell computer its a ruby file  and run it without specifying .rb (i can but i dont need to) 
-##put into tuby interpretor, makes gem portable for other OS's
-require_relative '../lib/environment' #requires everything i need in my 
 
-Cli.new.run #instantianting cli class and calling run method on new instance
-##^^ make an instance of cli class = cli
-## call instance method on it 
-## OR cli = Cli.new 
-##     cli.run 
+require_relative '../lib/environment' 
 
-
-## run file = this executable file = is the first entry point to your app, 1st file that gets run
-#therefore we need a way of linking our dependencies = require_relative + require_relative
-# dependencies =(what your project depends on to run ex: gems/files you need access to )
-
-#require_relative = i know where the file I need is compared to where
-# i currently am in my app, so im gonna give a file path thats relative to the file I'm in
-# use if you know exactly where your gem is relative to your current project
-##require = works with absolute path, use if you need a gem thats installed in my sistem but you don't know where your gem is or lives (determined in my shell path)
-
-#use require_relative for this project = im gonna require .env file bc 
-#i know exactly where it relative to the current file that im in 
-# up a level/ up 1 folder into lib foler = .. 
-#and lets access that .env file 
-
+Cli.new.run 

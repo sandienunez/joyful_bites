@@ -3,11 +3,8 @@ class Meal
 
     @@all = []
 
-    def initialize(meal_name) #nil =to make it optional cuz we don't wanna pass in last 2 
+    def initialize(meal_name) 
         @meal_name = meal_name 
-        # @ingredients = ingredients 
-        # @recipe = recipe 
-
         @@all << self 
     end
 
@@ -18,11 +15,6 @@ class Meal
     def self.select_by_ingredient(ingredient)
         self.all.select {|meal| meal.ingredient == ingredient}
     end
-
-    #  def self.find_or_create_by_name(ingredient)
-    #         self.all.find do |meal| 
-    #     end
-    # end
 
     def self.find_by_name(name)
         self.all.find do |meal| 
@@ -35,12 +27,9 @@ class Meal
     end
     
     def self.create(name)
-        meal = self.new(name) #created meal instance 
+        meal = self.new(name) 
         meal
     end
 
 end
 
-## Meal Class = responsible for making meals 
-##new meal objects are created and stored
-###retrieve the meal the user requested 

@@ -1,9 +1,9 @@
 class Cli
 
-    def run #instance method 
+    def run 
         a = Artii::Base.new
         #binding.pry
-        puts "  " #add some white spacing/format for user = aesthetically makes it prettier for user
+        puts "  " 
         puts "  "
         puts a.asciify('                               H E L L O !         ').green 
         puts a.asciify('                              H O  L  A !').blue
@@ -14,11 +14,9 @@ class Cli
         puts "🍍 Simply choose one or more 🍆 vegetable, 🍅 fruit, 🍎or poultry 🍌 ingredients you have in your kitchen, pantry or fridge and press enter. If you want dairy-free, gluten-free or vegan meal ideas, you can type 'Vegan GF' to receive back a curated list made just for you!".blue  
         puts "  "
     
-        @ingredient = gets.strip.downcase #or should i do chomp method
-        Api.get_meals(@ingredient)  ## send query to API 
-        ## display a list of meals to user 
+        @ingredient = gets.strip.downcase 
+        Api.get_meals(@ingredient)  
         print_meals(Ingredient.find_by_ingredient(@ingredient).meals)  #how can i just pass in meals for this current ingredient
-        ## present user w/ next steps
         prompt_recipe
         input = gets.strip.downcase 
 
@@ -26,7 +24,6 @@ class Cli
            #binding.pry
             if input == 'list'
                 print_meals(Ingredient.find_by_ingredient(@ingredient).meals) 
-                # go ahead and list my meals with this ingredient again
                 # binding.pry
             elsif input.to_i > 0 && input.to_i <= Ingredient.find_by_ingredient(@ingredient).meals.length
                 # binding.pry
@@ -54,7 +51,7 @@ class Cli
         puts a.asciify('         Come     back     again     S O O N   !').magenta
         puts "        "
     end
-    #  for visiting the Joyful Bites app! Come back again soon
+ 
 
     def menu_meals(meals)
         puts "  "
@@ -133,21 +130,4 @@ end
 
     
 
-      # puts "Meal Idea: #{meal.meal_name}" 
-     # puts meal.recipe.each.with_index(1) do |recipe, index|
-
-#convention for this cli file = to have run method = job is to execute flow of what app does 
-###Cli file = handles input FROM my user and output TO my user 
-###point of CLI class= to handle interactions w/ user
-#command line = terminal 
-#how user is interfacing with our application 
-
-#1. = greet user (print)
-#2.  = display/print numbered list of meals 
-#3.  = user inputs the number of specific meal they want to know about
-#4. = terminal prints meal recipe info 
-#5. prints list of menu options (see list of meals or exit program)
-#6. = user inputs instruction for next action 
-
-#   #Api.get_meals(@ingredient)
-#where we build our menuing 
+     
