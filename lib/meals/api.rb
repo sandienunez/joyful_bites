@@ -14,7 +14,7 @@ class Api
             new_meal = Meal.find_or_create_by_name(meal_details["title"])
              url = "https://api.spoonacular.com/recipes/#{meal_details["id"]}/analyzedInstructions?apiKey=#{ENV.fetch('SPOONACULAR_API_KEY')}" 
              new_meal.url=url 
-            new_ingredient.meals << new_meal 
+            new_ingredient.meals << new_meal #EXPLAIN
         end
     end 
         # binding.pry
@@ -42,7 +42,7 @@ class Api
             ingredient_array.flatten!
         meal_object.ingredients=ingredient_array 
             #   binding.pry
-            recipe_string = steps.join
+            recipe_string = steps.join #EXPLAIN
             meal_object.recipe=recipe_string
             else 
                 puts "  "

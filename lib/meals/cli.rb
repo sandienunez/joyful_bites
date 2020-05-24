@@ -9,7 +9,7 @@ class Cli
         puts a.asciify('                              H O  L  A !').blue
         puts a.asciify('                             B O N J O U R  !  ').magenta
         puts a.asciify('                                 K o n  n i c h i w a !  ')
-        puts "🍉🍊 Welcome to the Joyful Bites app! Where we make your life so much easier during this pandemic based on what's in your fridge! Let us take away the stress of meal prep ideas so you can fully enjoy your life!🍓🍏".magenta
+        puts "🍉🍊 Welcome to the Joyful Bites app! Where we make your life so much easier during this pandemic based on what's in your fridge! Let us take away the stress of meal prep ideas so you can fully enjoy your cravings!🍓🍏".on_magenta
         puts "  "
         puts "🍍 Simply choose one or more 🍆 vegetable, 🍅 fruit, 🍎or poultry 🍌 ingredients you have in your kitchen, pantry or fridge and press enter. If you want dairy-free, gluten-free or vegan meal ideas, you can type 'Vegan GF' to receive back a curated list made just for you!".blue  
         puts "  "
