@@ -12,7 +12,7 @@ class Cli
         puts "  "
         puts "🍉🍊 Welcome to the Joyful Bites app! Where we make your life so much easier during this pandemic based on what's in your fridge! Let us take away the stress of meal prep ideas so you can fully enjoy your cravings!🍓🍏".on_magenta
         puts "  "
-        puts "🍍 Simply choose one or more 🍆 vegetable, 🍅 fruit, 🍎or poultry 🍌 ingredients you have in your kitchen, pantry or fridge and press enter. If you want dairy-free, gluten-free or vegan meal ideas, you can type 'Vegan GF' to receive back a curated list made just for you!".blue    
+        puts "🍍 Simply choose one or more 🍆 vegetable, 🍅 fruit, 🍎or poultry 🍌 ingredients you have in your kitchen, pantry or fridge and press enter. If you want dairy-free, gluten-free or vegan meal ideas, you can type 'Vegan GF' to receive back a curated list made just for you!".blue.bold   
         puts "  "
     
         @ingredient = gets.strip.downcase 
@@ -77,19 +77,21 @@ class Cli
 
     def print_meal(meal)
         puts "  "
-        print "\n                                            T   H   I   N   K   I   N   G \n".blue + "[-----------------------------------------------------------------------------------------------------]".green
+        print "\n                                            T   H   I   N   K   I   N   G \n".on_blue.bold + "[----------------------------------------------------------------------------------------------------------------------------------------------------------------]".green.on_blue.bold
         puts "  "
-        puts "Meal Idea:".magenta 
+        puts "  "
+        puts "  "
+        puts "Meal Idea:".magenta.underline 
         puts meal.meal_name
         puts "  "
-        puts "Ingredients needed for your recipe:".magenta
+        puts "Ingredients needed for your recipe:".magenta.underline
         if meal.ingredients != nil
             meal.ingredients.each.with_index(1) do |ingredient, index|
                 puts "Step #{index}. #{ingredient}"
             end 
         end 
         puts "  "
-        puts "Recipe Instructions:".magenta
+        puts "Recipe Instructions:".magenta.underline 
         puts "  "
 
         if meal.recipe != nil 
@@ -114,7 +116,7 @@ class Cli
 
     def prompt_ingredient
         puts "  "
-        puts "Type an ingredient to see the delicious meals you can make with it!"
+        puts "Type an ingredient to see the delicious meals you can make with it!".bold.magenta 
         puts "  "
         @ingredient = gets.strip.downcase
        if Ingredient.find_by_ingredient(@ingredient) == nil  
