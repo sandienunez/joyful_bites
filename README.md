@@ -1,12 +1,12 @@
+![Screen Shot 2020-05-15 at 9 47 55 PM](https://user-images.githubusercontent.com/61069416/82765412-cc111f80-9de4-11ea-9674-e04608d7bec2.png)
+
 # Joyful Bites
 
 Welcome to the Joyful Bites app! This tool is an incredible interface that caters to serve the user's cravings during this pandemic based on what's in your fridge! 
 
 # Motivation
 
-We know it has been hard on many families during this COVID-19 crisis, therefore it is the mission of Joyful Bites to provide healthy, easy to make and tasty meals for you and your family to enjoy. We take away the stress of meal prep ideas so you can fully enjoy your day! Whether you're dairy-free, GF (gluten-free), Vegan or just plain old hungry, we have something to please everyone! The user simply types in the ingredient(s) they have in their kitchen and receives back a list of delicious meal ideas and can further explore recipe steps and instructions galore. In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/joyful_bites`. To experiment with that code, run `ruby ./bin/run` for an interactive prompt. 
-
-
+We know it has been hard on many families during this COVID-19 crisis, therefore it is the mission of Joyful Bites to provide healthy, easy to make and tasty meals for you and your family to enjoy. We take away the stress of meal prep ideas so you can fully enjoy your day! Whether you're dairy-free, GF (gluten-free), Vegan or just plain old hungry, we have something to please everyone! The user simply types in the ingredient(s) they have in their kitchen and receives back a list of delicious meal ideas and can further explore recipe steps and instructions galore. 
 ## Installation
 Eventually, Joyful Bites will be a fully-fledged Ruby gem. At the moment, installation of the project can be performed locally with the following steps:
 
@@ -25,8 +25,6 @@ From there, you can discover creative meal ideas, full of your favorite ingredie
 ## Development
 
 After checking out the repo, run `bin/environment` to install dependencies. You can also run `ruby ./bin/run` for an interactive prompt that will allow you to experiment.
-
-To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
 
 ## Contributing
 
